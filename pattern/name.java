@@ -2,9 +2,42 @@ package pattern;
 public class name
 {
 	int i,j,s;
+public void pascal(int n)
+{
+int n,i,j,k,s,pos=0;
+int[] arr=new int[100];
+int[] arr2=new int[100];
+n=10;
+arr[0]=1;
+arr2[0]=1;
+
+for(i=0;i<n;i++)
+{
+    for(s=0;s<n-i;s++)
+    {System.out.printf("%-4s","");
+    }
+    pos=0;
+    //calculating arr
+    for(k=0;k<i+1;k++)
+    {
+        if(k==0 || k== i){
+        arr[k]=1;
+        }
+        else{
+            arr[k]=arr2[k]+arr2[k-1];
+        }
+    }
+    for(j=0;j<=i;j++)
+    {
+arr2[pos]=arr[pos];
+System.out.printf("%-4s%-4s",arr[pos],"");
+pos++;
+}
+   System.out.println();
+    }	
+}
 public void easypyramid(int n,String syb)
 {
-
 for(i=1;i<=n;i++)
 {
     for(j=1;j<=n;j++)
