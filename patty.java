@@ -12,11 +12,10 @@ class patty
 	   System.out.println("Enter symbol you want to print");
 	   String sybl=db.readLine();
 	   System.out.println("Enter choice \na.Easy pyramid \nb.EasyDownward pyradmid\nc.normasctriangle\nd.normdestriangle\ne.hollow rectangle\nf.Triangle pyramid");
-	   System.out.print("g.downtripyramid\nh.NormalN\ni.TestZ");
+	   System.out.print("g.downtripyramid\nh.NormalN\ni.TestZ\nj.Pascal\n");
 	   String ope=db.readLine();
 	   switch(ope)
 	   {
-		   
 	   case "a":ob.easypyramid(num,sybl);
 	          break;
 	   case "b":ob.easydpyramid(num,sybl);
@@ -34,6 +33,8 @@ class patty
 	   case "h":ob.normalN(num,sybl);
 	   break;
 	   case "i":ob.testZ(num,sybl);
+	   break;
+	   case "j":ob.pascal(num);
 	   break;
 	   default:System.out.println("not found");
 	   }
