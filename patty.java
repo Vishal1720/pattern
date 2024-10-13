@@ -2,6 +2,7 @@ import java.io.*;
  class name
 {
 	int i,j,s;
+
 public void pascal(int n)
 {
 int i,j,k,s,pos=0;
@@ -36,6 +37,7 @@ pos++;
    System.out.println();
     }	
 }
+
 public void easypyramid(int n,String syb)
 {
 for(i=1;i<=n;i++)
@@ -51,6 +53,7 @@ for(i=1;i<=n;i++)
 		System.out.println("");
 }
 }
+
 public void easydpyramid(int n,String syb)
 {
 	for(i=1;i<=n;i++)
@@ -86,8 +89,6 @@ public void normdestriangle(int n,String syb)
 			System.out.print(syb);
 		}System.out.println("");
 	}
-	
-	
 }
 
 public void hollowsqr(int n,String syb)
@@ -100,10 +101,8 @@ public void hollowsqr(int n,String syb)
 				System.out.print(syb);
 			else
 		System.out.print(" ");	
-		}System.out.println();
-		
+		}System.out.println();	
 	}
-	
 }
 
 public void trianglepyramid(int n,String syb)
@@ -116,10 +115,8 @@ for(i=0;i<n;i++)
 		System.out.print(" ");
 	}
     for(j=1;j<=(2*i)+1;j++)
-	    {
-		
+	    {	
 		System.out.print(syb);
-		
 		}
 		System.out.println("");
 }
@@ -132,11 +129,9 @@ for(i=n-1;i>=0;i--)
 	int s;
 	for(s=i;s<n-1;s++)
 	System.out.print(" ");
-
       for(j=1;j<=(2*i)+1;j++)
 	  System.out.print(syb);
 	  System.out.println("");
-
 }
 }
 
@@ -150,7 +145,6 @@ public void normalN(int n,String syb)
 				  System.out.print(syb);
 				  else
 				  System.out.print(" ");
-
 		}System.out.println();
 	  }
 
@@ -171,26 +165,53 @@ public void testZ(int n,String syb)
 				{
 					if(ini==0)//try removing ini three lines to understand why it is needed
 					{System.out.println("");
-					ini=1;}
+					ini=1;
+					}
 					temp=s;
 					while(s!=0)
 					{System.out.print(" ");
-					s--;}
+					s--;
+				    }
 					System.out.print(syb+"\n");
                    s=temp;
 				   s--;
 				}
-
 			}
-
 	   }
+}
+   
+   
+   public void numberfield(int n){
+	int nlines,i,j,ival,jval;
+int ii=1,jj=1,nn,temp;
+
+nlines=n+(n-1);
+
+nn=nlines;
+temp=n;
+for(i=1;i<=nlines;i++){
+  for(j=1;j<=nlines;j++){
+    ii=1;jj=1;nn=nlines;n=temp;//reset again for while loop to work
+  while(nn>=1 && n>=1){
+    if(i==ii||j==jj||i==nn||j==nn)
+    {
+	 System.out.printf("%3d",n);
+     break;     //if it is printed once we have to break
+     }
+    ii+=1;
+    jj+=1;
+    nn-=1;
+    n-=1;
+   }
+
+  }  System.out.println();     
    }
 
 
 
 
 }
-
+}
 class patty
 {
        public static void main(String args[])throws IOException
@@ -202,8 +223,8 @@ class patty
 	   num=Integer.parseInt(db.readLine());
 	   System.out.println("Enter symbol you want to print");
 	   String sybl=db.readLine();
-	   System.out.println("Enter choice \na.Easy pyramid \nb.EasyDownward pyradmid\nc.normasctriangle\nd.normdestriangle\ne.hollow rectangle\nf.Triangle pyramid");
-	   System.out.print("g.downtripyramid\nh.NormalN\ni.TestZ\nj.Pascal\n");
+	   System.out.println("\na.Easy pyramid \nb.EasyDownward pyradmid\nc.normasctriangle\nd.normdestriangle\ne.hollow rectangle\nf.Triangle pyramid");
+	   System.out.print("g.downtripyramid\nh.NormalN\ni.TestZ\nj.Pascal\nk.NumberFieldPattern\nEnter choice ");
 	   String ope=db.readLine();
 	   switch(ope)
 	   {
@@ -226,6 +247,8 @@ class patty
 	   case "i":ob.testZ(num,sybl);
 	   break;
 	   case "j":ob.pascal(num);
+	   break;
+	   case "k":ob.numberfield(num);
 	   break;
 	   default:System.out.println("not found");
 	   }
