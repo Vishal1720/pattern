@@ -216,16 +216,26 @@ class patty
 {
        public static void main(String args[])throws IOException
 	   {
-	   int num;
+	   int num=10;
+	   String sybl="+";
 	   name ob=new name();
 	   DataInputStream db=new DataInputStream(System.in);
-	   System.out.println("Enter number of lines you want");
-	   num=Integer.parseInt(db.readLine());
-	   System.out.println("Enter symbol you want to print");
-	   String sybl=db.readLine();
+	   String ope="a";
+	   while(ope!="O"){
+		
 	   System.out.println("\na.Easy pyramid \nb.EasyDownward pyradmid\nc.normasctriangle\nd.normdestriangle\ne.hollow rectangle\nf.Triangle pyramid");
-	   System.out.print("g.downtripyramid\nh.NormalN\ni.TestZ\nj.Pascal\nk.NumberFieldPattern\nEnter choice ");
-	   String ope=db.readLine();
+	   System.out.print("g.downtripyramid\nh.NormalN\ni.TestZ\nj.Pascal\nk.NumberFieldPattern\nz.Exit\nEnter choice ");
+	   ope=db.readLine();
+	   if(!ope.equals("z"))
+	   {
+		System.out.println("Ope "+ope);
+	   System.out.println("Enter number of line a s you want");
+	   num=Integer.parseInt(db.readLine());
+	   }  
+	   if(!ope.equals("j") && !ope.equals("k") && !ope.equals("z"))
+	   {System.out.println("Enter symbol you want to print");
+	   sybl=db.readLine();
+	   }
 	   switch(ope)
 	   {
 	   case "a":ob.easypyramid(num,sybl);
@@ -250,7 +260,10 @@ class patty
 	   break;
 	   case "k":ob.numberfield(num);
 	   break;
-	   default:System.out.println("not found");
+	   case "z":System.out.println("Exiting");
+	   break;
+	   default:{System.out.println("not found");}
+	   }
 	   }
 	   }
 
