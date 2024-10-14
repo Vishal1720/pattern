@@ -221,7 +221,7 @@ class patty
 	   name ob=new name();
 	   DataInputStream db=new DataInputStream(System.in);
 	   String ope="a";
-	   while(ope!="O"){
+	   while(!ope.equals("z")){
 		
 	   System.out.println("\na.Easy pyramid \nb.EasyDownward pyradmid\nc.normasctriangle\nd.normdestriangle\ne.hollow rectangle\nf.Triangle pyramid");
 	   System.out.print("g.downtripyramid\nh.NormalN\ni.TestZ\nj.Pascal\nk.NumberFieldPattern\nz.Exit\nEnter choice ");
